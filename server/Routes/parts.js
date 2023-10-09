@@ -51,7 +51,7 @@ const upload = multer({
 router.post('/api/addparts', upload.single('image'), async(req, res) => {
     
     let data = JSON.parse(req.body.information)
-    const watch = new PartsSchema({ ...req.body})
+    const part = new PartsSchema({ ...req.body})
     // const part = new PartsSchema({
     //     name: data.name,
     //     make: data.make,
@@ -62,9 +62,9 @@ router.post('/api/addparts', upload.single('image'), async(req, res) => {
     //     stock: data.stock,
     //     image: req.file.filename
     // })
-    // await part.save()
-    //     .then(response => res.json(response))
-    //     .catch(error => res.status(500).json(error))
+    await part.save()
+        .then(response => res.json(response))
+        .catch(error => res.status(500).json(error))
 })
 
 //update parts
