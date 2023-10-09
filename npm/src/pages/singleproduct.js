@@ -50,6 +50,10 @@ const SingleProduct = () => {
                     <Grid xs={12}>
                         <h3>{product.price}</h3>
                     </Grid>
+                    <Grid>
+                        <Button variant="contained">Edit</Button>
+                        <Button variant="outlined" sx={{marginLeft:'20px'}}>Delete</Button>
+                    </Grid>
                     <Button onClick={() => handleAddCart(product._id, product.name, product.make, product.model, product.price, product.chasis, product.year, product.image)} >Add to Cart</Button>
                 </Grid>
             </Grid>
