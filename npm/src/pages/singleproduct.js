@@ -3,7 +3,7 @@ import react from 'react'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 // Import Axios
 import Axios from "axios";
@@ -49,6 +49,12 @@ const SingleProduct = () => {
                     </Grid>
                     <Grid xs={12}>
                         <h3>{product.price}</h3>
+                    </Grid>
+                    <Grid>
+                        {/* Edit Button  */}
+                        <Button variant="contained">Edit</Button>
+                        {/* Delete Button  */}
+                        <Button variant="outlined" sx={{marginLeft:'20px'}}>Delete</Button>
                     </Grid>
                     <Button onClick={() => handleAddCart(product._id, product.name, product.make, product.model, product.price, product.chasis, product.year, product.image)} >Add to Cart</Button>
                 </Grid>
