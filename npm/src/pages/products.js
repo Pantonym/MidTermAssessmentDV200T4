@@ -44,7 +44,7 @@ const Products = () => {
         payload.append('information', JSON.stringify(details));
         payload.append('image', pimage);
 
-        Axios.post('http://localhost:5000/api/addpart', payload);
+        Axios.post('http://localhost:5000/api/addpart', details);
 
         setReRenderProducts(true);
     }

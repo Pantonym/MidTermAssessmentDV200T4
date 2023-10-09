@@ -48,21 +48,21 @@ const upload = multer({
 
 
 //add parts
-router.post('/api/addparts', upload.single('image'), async(req, res) => {
+router.post('/api/addparts', async(req, res) => {
     
     let data = JSON.parse(req.body.information)
-    // const part = new PartsSchema({ ...req.body})
-    const part = new PartsSchema({
-        name: data.name,
-        make: data.make,
-        model: data.model,
-        chasis: data.chasis,
-        year: data.year,
-        partID: data.partId,
-        stock: data.stock,
-        price: data.price,
-        image: req.file.filename
-    })
+    const part = new PartsSchema({ ...req.body})
+    // const part = new PartsSchema({
+    //     name: data.name,
+    //     make: data.make,
+    //     model: data.model,
+    //     chasis: data.chasis,
+    //     year: data.year,
+    //     partID: data.partId,
+    //     stock: data.stock,
+    //     price: data.price,
+    //     image: req.file.filename
+    // })
     await part.save()
         .then(response => res.json(response))
         .catch(error => res.status(500).json(error))
