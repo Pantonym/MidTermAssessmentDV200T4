@@ -64,6 +64,7 @@ const Checkout = () => {
             onChange={handlePaymentChange}
             required
           />
+          
         </form>
       </div>
       
@@ -79,6 +80,7 @@ const Checkout = () => {
         </ul>
         <h3>Total: R{cartTotal}</h3>
       </div>
+      <buton>SUBMIT</buton>
     </div>
   );
 };
