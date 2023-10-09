@@ -3,6 +3,10 @@ import react from 'react'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 
+import React, { useState, useEffect } from 'react';
+
+// Import Axios
+import Axios from "axios";
 
 const SingleProduct = () => {
     const id = sessionStorage.getItem('ProductID');
