@@ -74,6 +74,15 @@ const Products = () => {
             <div className="productPage-main-contaner">
 
                 <Grid contanier spacing={0}>
+                    <div>
+                        <Button variant="info" onClick={() => {
+                            document.getElementById('CartPopup').style.width = '200px';
+                            document.getElementById('content').style.display = 'inline';
+                        }}>View cart</Button>
+                    </div>
+
+                    <br></br>
+
                     {/* card can go in here */}
                     <Grid xs={12}>
                         {cards}
@@ -85,7 +94,7 @@ const Products = () => {
                         </Grid>
                     }
 
-                    <div id="AddForm" style={{ display: "inline" }}>
+                    <div id="AddForm" style={{ display: "none" }}>
                         <form>
                             <h2>Add Item</h2>
 
@@ -141,6 +150,12 @@ const Products = () => {
                                 <input type="file" name="image" onChange={(e) => setImage(e.target.value)} ></input>
                             </label>
                         </form>
+                    </div>
+
+                    <div id="CartPopup" style={{ width: "0px" }}>
+                        <div id="content" style={{display: 'none'}}>
+                            <h1>Name</h1>
+                        </div>
                     </div>
 
                 </Grid>

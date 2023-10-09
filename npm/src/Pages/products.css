@@ -4,3 +4,11 @@ input {
 
     font-size: large;
 }
+
+.productPage-main-contaner {
+    margin-top: 100px;
+}
+
+#CartPopup {
+    transition: 0.5s ease-in;
+}
