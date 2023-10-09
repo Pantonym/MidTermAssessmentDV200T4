@@ -1,4 +1,3 @@
-// https://mongoosejs.com/docs/schematypes.html
 const mongoose = require('mongoose');
 
 const PartsSchema = mongoose.Schema({
@@ -38,4 +37,4 @@ const PartsSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model("Parts", PartsSchema);
+module.exports = mongoose.model("parts", PartsSchema);

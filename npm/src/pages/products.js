@@ -20,7 +20,7 @@ const Products = () => {
             console.log(productData);
 
             let renderProducts = productData.map((item) =>
-                <Card key={item._id} id={item.partID} name={item.name} make={item.make} model={item.model} chasis={item.chasis} year={item.year} 
+                <Card key={item._id} id={item.partID} name={item.name} make={item.make} model={item.model} chasis={item.chasis} year={item.year}
                 />)
 
             setCards(renderProducts);
@@ -30,11 +30,11 @@ const Products = () => {
     return (
         <>
             <div className="productPage-main-contaner">
-                
+
                 <Grid contanier spacing={0}>
                     {/* card can go in here */}
                     <Grid xs={12}>
-
+                        {cards}
                     </Grid>
                 </Grid>
 
