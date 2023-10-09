@@ -33,6 +33,12 @@ const SingleProduct = () => {
         sessionStorage.setItem('Cart', JSON.stringify(cart));
         console.log(sessionStorage.getItem('Cart'));
       };
+
+    const editProduct = ()=>{
+        alert("edit this product");
+
+    }
+
     return (
         <div className='singleproduct-page-main-con'>
             <Grid container spacing={0}>
@@ -57,6 +63,9 @@ const SingleProduct = () => {
                     <Grid>
                         {/* Edit Button  */}
                         <Button variant="contained"> Edit </Button>
+
+                        <Button variant="contained">Edit</Button>
+
                         {/* Delete Button  */}
                         <Button variant="outlined" sx={{marginLeft:'20px'}}> Delete </Button>
                     </Grid>
