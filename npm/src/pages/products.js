@@ -81,6 +81,12 @@ const Products = () => {
                         }}>View cart</Button>
                     </div>
 
+                    <div id="CartPopup" style={{ width: "0px", position: 'top' }}>
+                        <div id="content" style={{display: 'none'}}>
+                            <h1>Name</h1>
+                        </div>
+                    </div>
+
                     <br></br>
 
                     {/* card can go in here */}
@@ -152,12 +158,6 @@ const Products = () => {
                             <br></br>
 
                             <button style={{fontSize: "24px", padding: '5px'}} onClick={addPart} > Add </button>
-                    </div>
-
-                    <div id="CartPopup" style={{ width: "0px" }}>
-                        <div id="content" style={{display: 'none'}}>
-                            <h1>Name</h1>
-                        </div>
                     </div>
 
                 </Grid>
