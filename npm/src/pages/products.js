@@ -29,7 +29,7 @@ const Products = () => {
                 setReRenderProducts(false);
             })
             .catch(err => console.log(err))
-            
+
     }, [reRenderProducts])
 
     return (
