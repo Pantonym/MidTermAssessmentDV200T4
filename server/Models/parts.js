@@ -20,7 +20,7 @@ const PartsSchema = mongoose.Schema({
         required: true
     },
     year: {
-        type: string,
+        type: String,
         required: true
     },
     partID: {
