@@ -60,6 +60,7 @@ router.post('/api/addparts', upload.single('image'), async(req, res) => {
         year: data.year,
         partID: data.partId,
         stock: data.stock,
+        price: data.price,
         image: req.file.filename
     })
     await part.save()
