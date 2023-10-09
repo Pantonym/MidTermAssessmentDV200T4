@@ -58,11 +58,9 @@ const Navbar = () => {
                         divider={<Divider orientation="vertical" flexItem />}
                         spacing={4}
                     >
-                        <Nav.Link className="navbar-page-links-options" href='/'>Home</Nav.Link>
-                        <Nav.Link className="navbar-page-links-options" href='/Profile'>Profile</Nav.Link>
-                        <Nav.Link className="navbar-page-links-options" href='/#'>Admin</Nav.Link>
-                        <Nav.Link className="navbar-page-links-options" href='/Signup'>Sign Up</Nav.Link>
                         <Nav.Link className="navbar-page-links-options" href='/SignIn'>Sign Out</Nav.Link>
+                        <Nav.Link className="navbar-page-links-options" href='/'>Home</Nav.Link>
+                        <Nav.Link className="navbar-page-links-options" href='/checkout'>Checkout</Nav.Link>
 
                     </Stack>
                 </div>
