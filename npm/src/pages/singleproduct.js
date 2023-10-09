@@ -13,7 +13,7 @@ const SingleProduct = () => {
   
     // load data from db using product id in session storage
     useEffect(() => {
-      Axios.get('http://localhost:5002/api/watch/' + id)
+      Axios.get('http://localhost:5000/api/watch/' + id)
         .then(result => {
           setProduct(result.data);
         })
@@ -21,8 +21,8 @@ const SingleProduct = () => {
   
     }, []);
 
-    const handleAddCart = (key, brand, model, price, image, quantity) => {
-        const newItem = { key: key, brand: brand, model: model, image: image,price: price , quantity: quantity}
+    const handleAddCart = (key, name, make, model, price, image, ) => {
+        const newItem = { key: key, name: name, make: model, image: image,price: price , quantity: quantity}
         const existingCart = JSON.parse(sessionStorage.getItem('Cart')) || [];
         const updatedCart = [...existingCart, newItem];
         setCart(updatedCart);
@@ -32,10 +32,7 @@ const SingleProduct = () => {
     return (
         <div className='singleproduct-page-main-con'>
             <Grid container spacing={0}>
-                {/* image goes here  */}
-                <Grid xs={6}>
-                    <img scr='' alt=''></img>
-                </Grid>
+                <Grid xs={6}></Grid>
                 <Grid xs={6}>
                     <Grid xs={12}>
                         <h1>{product.name}</h1>
