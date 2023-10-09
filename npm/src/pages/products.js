@@ -1,7 +1,7 @@
 import React from "react";
 import './products.css';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Grid from '@mui/material/Grid';
 
@@ -26,8 +26,10 @@ const Products = () => {
                     />)
 
                 setCards(renderProducts);
+                setReRenderProducts(false);
             })
             .catch(err => console.log(err))
+            
     }, [reRenderProducts])
 
     return (
