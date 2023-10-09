@@ -48,7 +48,7 @@ const upload = multer({
 
 
 //add parts
-router.post('/api/addparts', async(req, res) => {
+router.post('/api/addparts', upload.single('image'), async(req, res) => {
     
     let data = JSON.parse(req.body.information)
     // const part = new PartsSchema({ ...req.body})
