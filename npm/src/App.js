@@ -9,7 +9,7 @@ import Footer from './Components/Footer';
 import Products from './Pages/products';
 import Login from './Pages/login';
 import SingleProduct from './Pages/singleproduct';
-import Checkout from './pages/checkout';
+import Checkout from './Pages/checkout';
 
 function App() {
   return (

@@ -42,9 +42,9 @@ const Products = () => {
         }
 
         payload.append('information', JSON.stringify(details));
-        payload.append('image', pimage);
+        //payload.append('image', pimage);
 
-        Axios.post('http://localhost:5000/api/addpart', details);
+        Axios.post('http://localhost:5000/api/addpart', payload);
 
         setReRenderProducts(true);
     }
@@ -81,7 +81,7 @@ const Products = () => {
                         }}>View cart</Button>
                     </div>
 
-                    <div id="CartPopup" style={{ width: "0px", position: 'top' }}>
+                    <div id="CartPopup" style={{ width: "0px" }}>
                         <div id="content" style={{display: 'none'}}>
                             <h1>Name</h1>
                         </div>
