@@ -32,7 +32,10 @@ const SingleProduct = () => {
     return (
         <div className='singleproduct-page-main-con'>
             <Grid container spacing={0}>
-                <Grid xs={6}></Grid>
+                {/* image goes here  */}
+                <Grid xs={6}>
+                    <img scr='' alt=''></img>
+                </Grid>
                 <Grid xs={6}>
                     <Grid xs={12}>
                         <h1>{product.name}</h1>
