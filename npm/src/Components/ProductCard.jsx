@@ -3,7 +3,7 @@ import './Navbar.css';
 
 import { Card, CardImg } from 'react-bootstrap'
 
-const Card = () => {
+const ProductCard = () => {
 
     return (
         <Card>
@@ -15,10 +15,11 @@ const Card = () => {
                     <h3>{props.model}</h3>
                     <h3>{props.chasis}</h3>
                     <h3>{props.year}</h3>
+                    <h3>R{Props.price}</h3>
                     <button id={"btnCart" + props.key}>Add To Cart</button>
                 </Card.Text>
             </Card.Body>
         </Card>
     )
 }
-export default Card
+export default ProductCard
