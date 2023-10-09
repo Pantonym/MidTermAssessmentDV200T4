@@ -58,7 +58,7 @@ const Navbar = () => {
                         divider={<Divider orientation="vertical" flexItem />}
                         spacing={4}
                     >
-                        <Nav.Link className="navbar-page-links-options" href='/SignIn'>Sign Out</Nav.Link>
+                        <Nav.Link className="navbar-page-links-options" href='/Login'>Login</Nav.Link>
                         <Nav.Link className="navbar-page-links-options" href='/'>Home</Nav.Link>
                         <Nav.Link className="navbar-page-links-options" href='/checkout'>Checkout</Nav.Link>
 
@@ -96,10 +96,10 @@ const Navbar = () => {
                                     </Nav.Link>
                                 </Grid>
                                 <Grid xs={12}>
-                                    <Nav.Link className="navbar-page-links-options" href='/SignIn'>
+                                    <Nav.Link className="navbar-page-links-options" href='/Login'>
                                         <button>
                                             <BiLogOut />
-                                            Log Out
+                                            Login
                                         </button>
                                     </Nav.Link>
                                 </Grid>
