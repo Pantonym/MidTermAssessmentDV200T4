@@ -5,7 +5,7 @@ import './login.css'
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('user'); // Default role is 'user'
+
 
     const handleRoleChange = (e) => {
         setRole(e.target.value);
@@ -17,6 +17,7 @@ function Login() {
         console.log('Email:', email);
         console.log('Password:', password);
         console.log('Role:', role);
+        localStorage.setItem('User', email)
     };
 
 
@@ -32,11 +33,6 @@ function Login() {
                 <label >Password:</label>
                 <input className='password' type="password" placeholder="Enter your password" required />
 
-                <label>Role:</label>
-                <select value={role} onChange={handleRoleChange}>
-                <option value="user">User</option>
-                <option value="admin">Admin</option>
-                </select>
                 <br></br>
                 <br></br>
                 <br></br>
