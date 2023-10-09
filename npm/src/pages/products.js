@@ -1,24 +1,47 @@
 import React from "react";
 import './products.css';
 
-// MUI 
-import Tooltip from '@mui/material/Tooltip';
-import Snackbar from '@mui/material/Snackbar';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Divider from '@mui/material/Divider';
-import { Avatar } from "@mui/material";
+import { useState } from "react";
 
-// React Icons 
-import { BiCog, BiHome, BiUser, BiLogOut } from "react-icons/bi";
+// Import Axios
+import Axios from "axios";
+
+import { Card } from "react-bootstrap";
 
 const Products = () => {
 
+    const [cards, setCards] = useState();
+
+    Axios.get('http://localhost:5000/api/products_get_all/')
+        .then(res => {
+            let productData = res.data;
+            console.log(productData);
+
+            let renderProducts = productData.map((item) =>
+                <Card key={item._id} id={item.partID} name={item.name} make={item.make} model={item.model} chasis={item.chasis} year={item.year} 
+                />)
+
+            setCards(renderProducts);
+        })
+        .catch(err => console.log(err))
+
     return (
         <>
+<<<<<<< Updated upstream
+            <div className="productPage-main-contaner">
+                
+                <Grid contanier spacing={0}>
+                    {/* card can go in here */}
+                    <Grid xs={12}>
+
+                    </Grid>
+                </Grid>
+=======
             <div>
+
+                {cards}
+>>>>>>> Stashed changes
+
             </div>
         </>
     )

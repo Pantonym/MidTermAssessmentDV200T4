@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 
 // pages 
-import Products from './Pages/products.js'
+import Products from './pages/products'
 
 function App() {
   return (
