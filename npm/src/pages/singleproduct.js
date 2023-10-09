@@ -17,7 +17,7 @@ const SingleProduct = () => {
   
     // load data from db using product id in session storage
     useEffect(() => {
-      Axios.get('http://localhost:5000/api/watch/' + id)
+      Axios.get('http://localhost:5000/api/part/' + id)
         .then(result => {
           setProduct(result.data);
         })
