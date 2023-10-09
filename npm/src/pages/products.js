@@ -42,9 +42,9 @@ const Products = () => {
         }
 
         payload.append('information', JSON.stringify(details));
-        //payload.append('image', pimage);
+        payload.append('image', pimage);
 
-        Axios.post('http://localhost:5000/api/addpart', payload);
+        Axios.post('http://localhost:5000/api/addparts', payload);
 
         setReRenderProducts(true);
     }
