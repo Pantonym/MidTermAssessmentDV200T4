@@ -2,6 +2,11 @@ import react from 'react'
 
 import './login.css'
 
+import React, { useState, useEffect } from 'react';
+
+// Import Axios
+import Axios from "axios";
+
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

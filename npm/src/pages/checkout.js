@@ -39,10 +39,8 @@ const Checkout = () => {
     setPaymentDetails({ ...paymentDetails, [name]: value });
   };
 
-  
-
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around', marginTop= '100px' }}>
+    <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '100px' }}>
       {/* Payment Details Form */}
       <div className='pay' style={{ width: '45%' }}>
         <h2>Payment Details</h2>
