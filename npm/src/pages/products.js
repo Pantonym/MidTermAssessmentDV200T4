@@ -27,20 +27,9 @@ const Products = () => {
 
     return (
         <>
-<<<<<<< Updated upstream
-            <div className="productPage-main-contaner">
-                
-                <Grid contanier spacing={0}>
-                    {/* card can go in here */}
-                    <Grid xs={12}>
-
-                    </Grid>
-                </Grid>
-=======
             <div>
 
                 {cards}
->>>>>>> Stashed changes
 
             </div>
         </>
