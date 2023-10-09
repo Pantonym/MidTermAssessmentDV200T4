@@ -35,6 +35,8 @@ const Checkout = () => {
     setPaymentDetails({ ...paymentDetails, [name]: value });
   };
 
+  
+
   return (
     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
       {/* Payment Details Form */}
@@ -80,9 +82,9 @@ const Checkout = () => {
             </li>
           ))}
         </ul>
-        <h3>Total: R{cartTotal}</h3>
+        <h3>Total: R{total}</h3>
       </div>
-      <button>SUBMIT</button>
+      <button onClick={handleCheckout()} > SUBMIT </button>
     </div>
   );
 };
