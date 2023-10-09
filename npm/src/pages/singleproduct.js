@@ -32,7 +32,7 @@ const SingleProduct = () => {
     return (
         <div className='singleproduct-page-main-con'>
             <Grid container spacing={0}>
-                <Grid xs={6}></Grid>
+                <Grid xs={6}>  </Grid>
                 <Grid xs={6}>
                     <Grid xs={12}>
                         <h1>{product.name}</h1>

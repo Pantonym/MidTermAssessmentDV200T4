@@ -17,6 +17,38 @@ const Products = () => {
     const [cards, setCards] = useState();
     const [reRenderProducts, setReRenderProducts] = useState(false);
 
+    const [name, setName] = useState();
+    const [make, setMake] = useState();
+    const [model, setModel] = useState();
+    const [chasis, setChasis] = useState();
+    const [year, setYear] = useState();
+    const [partID, setPartId] = useState();
+    const [stock, setStock] = useState();
+    const [price, setPrice] = useState();
+    const [image, setImage] = useState();
+
+    const addWatch = (e) => {
+        const payload = new FormData()
+
+        let details = {
+            name: name,
+            make: make,
+            model: model,
+            chasis: chasis,
+            year: year,
+            partID: partID,
+            stock: stock,
+            price: price
+        }
+
+        payload.append('information', JSON.stringify(details));
+        payload.append('image', image);
+
+        Axios.post('http://localhost:5000/api/addpart', payload);
+        // setUpdateWatches(true);
+    }
+    
+
     const isAdmin = localStorage.getItem("User") === "Admin";
     const [admin, setAdmin] = useState(isAdmin);
 
@@ -58,55 +90,55 @@ const Products = () => {
                             <h2>Add Item</h2>
 
                             <label> Name:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="name" onChange={(e) => setName(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Make:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="make" onChange={(e) => setMake(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Model:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="model" onChange={(e) => setModel(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Chasis:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="chasis" onChange={(e) => setChasis(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Year:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="year" onChange={(e) => setYear(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Part ID:
-                                <input type="text" name="name"></input>
+                                <input type="text" name="partID" onChange={(e) => setPartId(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Stock:
-                                <input type="text" name="name"></input>
+                                <input type="Number" name="stock" onChange={(e) => setStock(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Price:
-                                <input type="text" name="name"></input>
+                                <input type="Number" name="price" onChange={(e) => setPrice(e.target.value)} ></input>
                             </label>
 
                             <br></br>
 
                             <label> Image:
-                                <input type="text" name="name"></input>
+                                <input type="file" name="image" onChange={(e) => setImage(e.target.value)} ></input>
                             </label>
                         </form>
                     </div>
