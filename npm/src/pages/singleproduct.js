@@ -17,7 +17,7 @@ const SingleProduct = () => {
   
     // load data from db using product id in session storage
     useEffect(() => {
-      Axios.get('http://localhost:5000/api/watch/' + id)
+      Axios.get('http://localhost:5000/api/part/' + id)
         .then(result => {
           setProduct(result.data);
         })
@@ -36,7 +36,11 @@ const SingleProduct = () => {
     return (
         <div className='singleproduct-page-main-con'>
             <Grid container spacing={0}>
-                <Grid xs={6}>  </Grid>
+                <Grid xs={6}> 
+                
+                <img src='http://localhost:5002/images/ + props.image' alt=''></img>
+                
+                </Grid>
                 <Grid xs={6}>
                     <Grid xs={12}>
                         <h1>{product.name}</h1>
