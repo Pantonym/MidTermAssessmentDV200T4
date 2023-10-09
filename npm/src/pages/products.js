@@ -48,7 +48,7 @@ const Products = () => {
 
         setReRenderProducts(true);
     }
-    
+
     const isAdmin = localStorage.getItem("User") === "Admin";
     const [admin, setAdmin] = useState(isAdmin);
 
@@ -69,6 +69,9 @@ const Products = () => {
 
     }, [reRenderProducts])
 
+    const cartData = JSON.parse(sessionStorage.getItem('Cart')) || [];
+    const [cart, setCart] = useState(cartData);
+
     return (
         <>
             <div className="productPage-main-contaner">
@@ -82,8 +85,14 @@ const Products = () => {
                     </div>
 
                     <div id="CartPopup" style={{ width: "0px" }}>
-                        <div id="content" style={{display: 'none'}}>
-                            <h1>Name</h1>
+                        <div id="content" style={{ display: 'none' }}>
+                            <ul>
+                                {cart.map(item => (
+                                    <li key={item.id}>
+                                        {item.name} - R{item.price}
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
                     </div>
 
@@ -101,63 +110,63 @@ const Products = () => {
                     }
 
                     <div id="AddForm" style={{ display: "inline" }} onSubmit={addPart}>
-                            <h2>Add Item</h2>
+                        <h2>Add Item</h2>
 
-                            <label> Name:
-                                <input type="text" name="name" onChange={(e) => setName(e.target.value)} ></input>
-                            </label>
+                        <label> Name:
+                            <input type="text" name="name" onChange={(e) => setName(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Make:
-                                <input type="text" name="make" onChange={(e) => setMake(e.target.value)} ></input>
-                            </label>
+                        <label> Make:
+                            <input type="text" name="make" onChange={(e) => setMake(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Model:
-                                <input type="text" name="model" onChange={(e) => setModel(e.target.value)} ></input>
-                            </label>
+                        <label> Model:
+                            <input type="text" name="model" onChange={(e) => setModel(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Chasis:
-                                <input type="text" name="chasis" onChange={(e) => setChasis(e.target.value)} ></input>
-                            </label>
+                        <label> Chasis:
+                            <input type="text" name="chasis" onChange={(e) => setChasis(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Year:
-                                <input type="text" name="year" onChange={(e) => setYear(e.target.value)} ></input>
-                            </label>
+                        <label> Year:
+                            <input type="text" name="year" onChange={(e) => setYear(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Part ID:
-                                <input type="text" name="partID" onChange={(e) => setPartId(e.target.value)} ></input>
-                            </label>
+                        <label> Part ID:
+                            <input type="text" name="partID" onChange={(e) => setPartId(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Stock:
-                                <input type="Number" name="stock" onChange={(e) => setStock(e.target.value)} ></input>
-                            </label>
+                        <label> Stock:
+                            <input type="Number" name="stock" onChange={(e) => setStock(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Price:
-                                <input type="Number" name="price" onChange={(e) => setPrice(e.target.value)} ></input>
-                            </label>
+                        <label> Price:
+                            <input type="Number" name="price" onChange={(e) => setPrice(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <label> Image:
-                                <input type="file" name="image" onChange={(e) => setImage(e.target.value)} ></input>
-                            </label>
+                        <label> Image:
+                            <input type="file" name="image" onChange={(e) => setImage(e.target.value)} ></input>
+                        </label>
 
-                            <br></br>
+                        <br></br>
 
-                            <button style={{fontSize: "24px", padding: '5px'}} onClick={addPart} > Add </button>
+                        <button style={{ fontSize: "24px", padding: '5px' }} onClick={addPart} > Add </button>
                     </div>
 
                 </Grid>
