@@ -17,32 +17,32 @@ const Products = () => {
     const [cards, setCards] = useState();
     const [reRenderProducts, setReRenderProducts] = useState(false);
 
-    const [name, setName] = useState();
-    const [make, setMake] = useState();
-    const [model, setModel] = useState();
-    const [chasis, setChasis] = useState();
-    const [year, setYear] = useState();
-    const [partID, setPartId] = useState();
-    const [stock, setStock] = useState();
-    const [price, setPrice] = useState();
-    const [image, setImage] = useState();
+    const [pname, setName] = useState();
+    const [pmake, setMake] = useState();
+    const [pmodel, setModel] = useState();
+    const [pchasis, setChasis] = useState();
+    const [pyear, setYear] = useState();
+    const [ppartID, setPartId] = useState();
+    const [pstock, setStock] = useState();
+    const [pprice, setPrice] = useState();
+    const [pimage, setImage] = useState();
 
-    const addWatch = (e) => {
+    const addPart = (e) => {
         const payload = new FormData()
 
         let details = {
-            name: name,
-            make: make,
-            model: model,
-            chasis: chasis,
-            year: year,
-            partID: partID,
-            stock: stock,
-            price: price
+            name: pname,
+            make: pmake,
+            model: pmodel,
+            chasis: pchasis,
+            year: pyear,
+            partID: ppartID,
+            stock: pstock,
+            price: pprice
         }
 
         payload.append('information', JSON.stringify(details));
-        payload.append('image', image);
+        payload.append('image', pimage);
 
         Axios.post('http://localhost:5000/api/addpart', payload);
 
@@ -94,8 +94,7 @@ const Products = () => {
                         </Grid>
                     }
 
-                    <div id="AddForm" style={{ display: "inline" }} onSubmit={addWatch}>
-                        <form>
+                    <div id="AddForm" style={{ display: "inline" }} onSubmit={addPart}>
                             <h2>Add Item</h2>
 
                             <label> Name:
@@ -152,8 +151,7 @@ const Products = () => {
 
                             <br></br>
 
-                            <button type="submit" style={{fontSize: "24px", padding: '5px'}}>Submit</button>
-                        </form>
+                            <button style={{fontSize: "24px", padding: '5px'}} onClick={addPart} > Add </button>
                     </div>
 
                     <div id="CartPopup" style={{ width: "0px" }}>
