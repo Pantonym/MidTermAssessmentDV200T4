@@ -18,7 +18,7 @@ app.use('/images', express.static('images'));
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-app.use('/api/parts', partsRoute);
+app.use(partsRoute);
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
