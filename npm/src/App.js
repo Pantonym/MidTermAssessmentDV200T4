@@ -6,10 +6,10 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer';
 
 // pages 
-import Products from './pages/products';
-import Login from './pages/login';
-import SingleProduct from './pages/singleproduct';
-import Checkout from './pages/checkout';
+import Products from './Pages/products';
+import Login from './Pages/login';
+import SingleProduct from './Pages/singleproduct';
+import Checkout from './Pages/checkout';
 
 function App() {
   return (
