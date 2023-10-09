@@ -14,7 +14,6 @@ const Checkout = () => {
   ]);
 
   const [total, setTotal] = useState();
-  
 
   useEffect(() => {
     try {
@@ -23,6 +22,11 @@ const Checkout = () => {
 
       // Calculate the total price of items in the cart
       const cartTotal = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+      if (cartTotal === undefined) {
+        cartTotal = 0;
+      }
+
       setTotal(cartTotal);
     } catch (error) {
       console.log('cart empty');
