@@ -45,10 +45,10 @@ const Products = () => {
         payload.append('image', image);
 
         Axios.post('http://localhost:5000/api/addpart', payload);
-        // setUpdateWatches(true);
+
+        setReRenderProducts(true);
     }
     
-
     const isAdmin = localStorage.getItem("User") === "Admin";
     const [admin, setAdmin] = useState(isAdmin);
 
@@ -94,7 +94,7 @@ const Products = () => {
                         </Grid>
                     }
 
-                    <div id="AddForm" style={{ display: "none" }}>
+                    <div id="AddForm" style={{ display: "inline" }} onSubmit={addWatch}>
                         <form>
                             <h2>Add Item</h2>
 
@@ -149,6 +149,10 @@ const Products = () => {
                             <label> Image:
                                 <input type="file" name="image" onChange={(e) => setImage(e.target.value)} ></input>
                             </label>
+
+                            <br></br>
+
+                            <button type="submit" style={{fontSize: "24px", padding: '5px'}}>Submit</button>
                         </form>
                     </div>
 
