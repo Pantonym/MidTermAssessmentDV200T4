@@ -21,8 +21,8 @@ const SingleProduct = () => {
   
     }, []);
 
-    const handleAddCart = (key, name, make, model, price, image, ) => {
-        const newItem = { key: key, name: name, make: model, image: image,price: price , quantity: quantity}
+    const handleAddCart = (key, name, make, model, price, chasis, year, image, ) => {
+        const newItem = { key: key, name: name, make: make, model: model, price: price, chasis: chasis, year: year, image: image}
         const existingCart = JSON.parse(sessionStorage.getItem('Cart')) || [];
         const updatedCart = [...existingCart, newItem];
         setCart(updatedCart);
@@ -46,7 +46,7 @@ const SingleProduct = () => {
                     <Grid xs={12}>
                         <h3>{product.price}</h3>
                     </Grid>
-                    <Button onClick={() => handleAddCart(product._id, product.name, product.make, product.model, product.price, product.image)} >Add to Cart</Button>
+                    <Button onClick={() => handleAddCart(product._id, product.name, product.make, product.model, product.price, product.chasis, product.year, product.image)} >Add to Cart</Button>
                 </Grid>
             </Grid>
         </div>
