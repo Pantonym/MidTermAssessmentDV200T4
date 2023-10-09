@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const Checkout = () => {
   const [paymentDetails, setPaymentDetails] = useState({
@@ -43,7 +42,7 @@ const Checkout = () => {
 
   const handleCheckout = (e) => {
     let details = { ...paymentDetails, cart};
-    axios.post
+    //axios.post
   };
 
   return (

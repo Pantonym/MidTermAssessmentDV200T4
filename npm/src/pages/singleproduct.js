@@ -44,7 +44,7 @@ const SingleProduct = () => {
             <Grid container spacing={0}>
                 <Grid xs={6}> 
                 
-                <img src={'http://localhost:5002/images/' + props.image} alt=''></img>
+                {/* <img src={'http://localhost:5002/images/' + props.image} alt=''></img> */}
                 
                 </Grid>
                 <Grid xs={6}>

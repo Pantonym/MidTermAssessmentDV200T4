@@ -12,26 +12,25 @@ function Login() {
     const [password, setPassword] = useState('');
 
 
-    const handleRoleChange = (e) => {
-        setRole(e.target.value);
-    };
+    // const handleRoleChange = (e) => {
+    //     setRole(e.target.value);
+    // };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Handle login logic here based on email, password, and role
         console.log('Email:', email);
         console.log('Password:', password);
-        console.log('Role:', role);
+        //console.log('Role:', role);
         localStorage.setItem('User', email)
-    };
-
+    }; 
 
     return (
         <div className="form-container">
             {/* Logo */}
             {/* Add your logo here */}
             <h2>Log In</h2>
-            <form className="form">
+            <form className="form" onSubmit={{handleSubmit}}>
                 <label >Email:</label>
                 <input className='email' type="email" placeholder="Enter your email" required />
 
@@ -49,7 +48,7 @@ function Login() {
             </form>
             <br></br>
             <br></br>
-            <button className='subbut'>Done</button>
+            <button className='submit'>Done</button>
         </div>
     );
 }
