@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Checkout = () => {
+
   const [paymentDetails, setPaymentDetails] = useState({
     cardNumber: '',
     expiryDate: '',
@@ -13,19 +14,19 @@ const Checkout = () => {
     // // Add more items to the cart as needed
   ]);
 
-  useEffect(() => {
-    try {
-      const cartData = JSON.parse(sessionStorage.getItem('Cart')) || [];
-      setCart(cartData);
+  // useEffect(() => {
+  //   try {
+  //     const cartData = JSON.parse(sessionStorage.getItem('Cart')) || [];
+  //     setCart(cartData);
 
-      // Calculate the total price of items in the cart
-      const cartTotal = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
-      setTotal(cartTotal);
-    } catch (error) {
-      console.log('cart empty');
-    }
-  }, []);
-  
+  //     // Calculate the total price of items in the cart
+  //     const cartTotal = cartData.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  //     setTotal(cartTotal);
+  //   } catch (error) {
+  //     console.log('cart empty');
+  //   }
+  // }, []);
+
 
   const handlePaymentChange = (e) => {
     const { name, value } = e.target;
@@ -64,10 +65,10 @@ const Checkout = () => {
             onChange={handlePaymentChange}
             required
           />
-          
+
         </form>
       </div>
-      
+
       {/* Cart Display */}
       <div className='cart' style={{ width: '45%' }}>
         <h2>Cart</h2>
@@ -78,9 +79,9 @@ const Checkout = () => {
             </li>
           ))}
         </ul>
-        <h3>Total: R{cartTotal}</h3>
+        {/* <h3>Total: R{cartTotal}</h3> */}
       </div>
-      <buton>SUBMIT</buton>
+      <button>SUBMIT</button>
     </div>
   );
 };

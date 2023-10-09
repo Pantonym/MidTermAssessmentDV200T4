@@ -44,7 +44,7 @@ const Products = () => {
         payload.append('information', JSON.stringify(details));
         payload.append('image', pimage);
 
-        Axios.post('http://localhost:5000/api/addpart', payload);
+        Axios.post('http://localhost:5000/api/addparts', payload);
 
         setReRenderProducts(true);
     }
@@ -79,6 +79,12 @@ const Products = () => {
                             document.getElementById('CartPopup').style.width = '200px';
                             document.getElementById('content').style.display = 'inline';
                         }}>View cart</Button>
+                    </div>
+
+                    <div id="CartPopup" style={{ width: "0px" }}>
+                        <div id="content" style={{display: 'none'}}>
+                            <h1>Name</h1>
+                        </div>
                     </div>
 
                     <br></br>
@@ -152,12 +158,6 @@ const Products = () => {
                             <br></br>
 
                             <button style={{fontSize: "24px", padding: '5px'}} onClick={addPart} > Add </button>
-                    </div>
-
-                    <div id="CartPopup" style={{ width: "0px" }}>
-                        <div id="content" style={{display: 'none'}}>
-                            <h1>Name</h1>
-                        </div>
                     </div>
 
                 </Grid>
