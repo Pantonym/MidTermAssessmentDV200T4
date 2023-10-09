@@ -6,7 +6,7 @@ import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 
 // pages 
-import Products from './pages/products'
+import Products from './Pages/products'
 import Login from './pages/login'
 
 function App() {
