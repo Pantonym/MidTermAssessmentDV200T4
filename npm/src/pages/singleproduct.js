@@ -38,7 +38,7 @@ const SingleProduct = () => {
             <Grid container spacing={0}>
                 <Grid xs={6}> 
                 
-                <img src='http://localhost:5002/images/ + props.image' alt=''></img>
+                <img src={'http://localhost:5002/images/' + props.image} alt=''></img>
                 
                 </Grid>
                 <Grid xs={6}>
@@ -56,9 +56,9 @@ const SingleProduct = () => {
                     </Grid>
                     <Grid>
                         {/* Edit Button  */}
-                        <Button variant="contained">Edit</Button>
+                        <Button variant="contained"> Edit </Button>
                         {/* Delete Button  */}
-                        <Button variant="outlined" sx={{marginLeft:'20px'}}>Delete</Button>
+                        <Button variant="outlined" sx={{marginLeft:'20px'}}> Delete </Button>
                     </Grid>
                     <Button onClick={() => handleAddCart(product._id, product.name, product.make, product.model, product.price, product.chasis, product.year, product.image)} >Add to Cart</Button>
                 </Grid>
